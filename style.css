@@ -1,0 +1,476 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    
+
+}
+.header {
+    display: flex;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+}
+.header .users{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    text-decoration: none;
+}
+/* slider styles */
+.slider {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    z-index: 999;
+    background-color: #228b22;
+    color: #fff;
+    transition: left 0.3s ease;
+    padding: 60px 0;
+    display: grid;
+
+}
+.slider.active {
+    left: 0;
+}
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.slider ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 14px 20px;
+    display: block;
+    font-size: 22px;
+}
+.slider ul li a:hover {
+    background-color: #575757;
+}
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+/* styling for frontpage content */
+.frontpage-player-cords{
+    display: grid;
+}
+.frontpage-top {
+    display: block;
+    margin: 20px;
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.frontpage-top p{
+    font-size: 18px;
+    margin-top: 10px;
+    font-family: Verdana, sans-serif;
+    color: #222;
+}
+/* styling for player cards */
+
+.heading-playerinfo{
+    text-align: center;
+    display: grid;
+    margin: 30px;
+    font-size: 28px;
+    color: #333;
+    font-family: Verdana, sans-serif;
+}
+#frontpage-playerinfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #8b8faf;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.playercard {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+/* styling for frontpage image box and inside items player cards */
+.imgbox {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    background-color: #ccc;
+    margin-bottom: 20px;
+}
+.player .btn{
+    background-color: none;
+    color: #222;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.player .btn:hover{
+    background-color: #007bff;
+    color: #fff;
+}
+.player h3{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+/* styling for control btn in player card*/
+.player-info-section{
+    display: none;
+}
+.player-info-section.active{
+    display: block;
+}
+/* styling for personal player biodata card */
+.profile-section{  
+    width: 95%;
+    background-color: #fff;
+    color: #efeded;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2px;
+    margin: 3%;
+}
+.profileimg{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    justify-content: center;
+    align-content: center;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    .profileimg{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .profileinfo{
+        margin-top: 0px;
+    }
+    
+}
+.profileinfo{
+    margin-top: 30px;    
+}
+.profileimg p{
+    font-size: 25px;
+}
+
+.profileimg h4{
+    font-size: 22px;
+    font-weight: 550;
+}
+.profileimg h3{
+    font-size: 30px;
+    font-weight: 550;
+    margin: 10px;
+    
+}
+.profileimg img{
+    display: grid;
+    background-size: cover;
+    border: 1px solid #ddd;
+    margin: 30px;
+    padding: 4px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 150px;
+}
+/* styling for control panel buttons */
+.section{
+    display: none;   
+}
+.section.active{
+    display: block;
+}
+.control-panel{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0 0 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#controlbtn{
+    width:100px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+}
+#controlbtn:hover{
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+}
+/* styling for player personal-information section */
+
+.personal-information{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 30px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Verdana, sans-serif;
+}
+.personal-information div{
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 40%;
+    
+}
+.personal-information h3{
+    font-size: 20px;
+    padding: 4px;
+    font-weight: 400;
+    color: #535050;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.personal-information p{
+    font-size: 18px;
+    color: #222;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif
+
+}
+
+/* styling for player about section */
+
+.about-heading{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.about-subheading{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.about-paragraph{
+    color: #333;
+    padding: 15px;
+    margin: 10px 20px 5px 20px;
+    font-family: sans-serif;
+}
+/*styling for career section */
+
+.career-heading{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+.career-section-box{
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.boxRow{
+    display: flex;
+    padding: 10px 0;
+    font-size: 18px;
+}
+.boxLabel{
+    font-weight: 600;
+    margin-right: 40px;
+}
+.boxRow h3{
+    font-size: 22px;
+    font-weight: 500;
+    color: #222;
+}
+
+/* style for player career stats */
+.stats-heading{
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: 600;
+    margin: 30px 0 30px 0;
+}
+.table-heading{
+    text-align: center;
+    font-size: 35px;
+    color: #333;
+    margin: 20px;
+}
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin: 2.5%;
+}
+caption{
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px;
+}
+thead{
+    background-color: #dee4ea;
+    color: #4c4747;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+tr:hover{
+    background-color: #f1ecec;
+}
+.career-stats{
+    margin: 10px;
+    background-color: #fff;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+
+}
+
+
+/* styling for bhuvneshwar kumar image section */
+.playersphoto{
+    
+    text-align: center;
+}
+.heading-images-section h2{
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-size: 35px;
+    font-weight: 600;
+
+}
+
+.players-imgbox{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 370px;
+    margin: 20px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.playersphoto img{
+    background-size: cover;
+    width: 85%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.playersphoto img:hover{
+    z-index: 100;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+
+}
+
+/* styling for video section */
+.heading-video-section{
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-size: 35px;
+    font-weight: 600;
+}
+.video-container{
+    text-align: center;
+}
+.video-box{
+    display: inline-block;
+    width:370px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.video-box video{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}   
+/* styling for footer */
+.footer {
+    background-color: #222;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    padding-top: 20px;
+}
+.footer a , p{
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 7px;
+    font-family: Verdana, sans-serif;
+    margin: 0 3px;
+}
+
