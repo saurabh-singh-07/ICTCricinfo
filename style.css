@@ -7,7 +7,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 
 }
 .header {
@@ -163,14 +166,16 @@ body {
 }
 /* styling for personal player biodata card */
 .profile-section{  
-    width: 95%;
+    width: 90%;
+    max-width: 1100px;
     background-color: #fff;
     color: #efeded;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 2px;
-    margin: 3%;
+    margin: auto;
+    margin-top: 48px;
 }
 .profileimg{
     display: grid;
@@ -188,7 +193,9 @@ body {
     .profileinfo{
         margin-top: 0px;
     }
-    
+    body{
+        display: inline;
+    }
 }
 .profileinfo{
     margin-top: 30px;    
@@ -226,9 +233,12 @@ body {
     display: block;
 }
 .control-panel{
+    width: 90%;
+    max-width: 1100px;
     display: flex;
     justify-content: space-evenly;
-    margin: 20px 0 0 0;
+    margin: auto;
+    margin-top: 48px;
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
@@ -254,14 +264,17 @@ body {
 /* styling for player personal-information section */
 
 .personal-information{
+    width: 90%;
+    max-width: 1100px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 20px;
+    margin: auto;
+    margin-top: 24px;
     padding: 30px;
     background-color: #fff;
     color: #333;
-    border-radius: 5px;
+    border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-family: Verdana, sans-serif;
 }
@@ -293,18 +306,34 @@ body {
     justify-content: center;
     margin-top: 60px;
     margin-bottom: 30px;
+    font-size: 45px;
 }
 .about-subheading{
+    font-size: 40px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 .about-paragraph{
+    font-size: 30px;
     color: #333;
-    padding: 15px;
+    padding: 15px 8%;
     margin: 10px 20px 5px 20px;
     font-family: sans-serif;
+}
+@media screen and (max-width: 600px){
+    .about-heading{
+        font-size: 32px;
+    }
+    .about-subheading{
+        font-size: 26px;
+    }
+    .about-paragraph{
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
 }
 /*styling for career section */
 
