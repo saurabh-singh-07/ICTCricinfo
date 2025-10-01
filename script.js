@@ -1,7 +1,7 @@
-// Slider Toggle Function
+// side Slider Toggle Function
 function toggleSlider() {
-const slider = document.getElementById('slider');
-slider.classList.toggle('active');
+const Sideslider = document.getElementById('side-slider');
+Sideslider.classList.toggle('active');
 }
 
 //  Player Image Box Toggle

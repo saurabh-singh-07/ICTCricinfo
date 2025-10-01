@@ -8,12 +8,13 @@ body {
     background-color: #f4f4f4;
     color: #333;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     min-height: 100vh;
 
 }
 .header {
+    width: 100%;
     display: flex;
     background-color: #007bff;
     color: white;
@@ -27,12 +28,18 @@ body {
     font-size: 24px;
     text-decoration: none;
 }
+
+.main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 90%;
+}
 /* slider styles */
-.slider {
+.side-slider {
     position: fixed;
     top: 0;
-    left: -250px;
-    width: 250px;
+    left: -350px;
+    width: 350px;
     height: 100%;
     z-index: 999;
     background-color: #228b22;
@@ -42,7 +49,7 @@ body {
     display: grid;
 
 }
-.slider.active {
+.side-slider.active {
     left: 0;
 }
 .menu-toggle {
@@ -78,7 +85,7 @@ body {
 }
 .frontpage-top {
     display: block;
-    margin: 20px;
+    margin: auto;
     text-align: center;
     padding: 40px;
     background-color: #fff;
@@ -165,9 +172,7 @@ body {
     display: block;
 }
 /* styling for personal player biodata card */
-.profile-section{  
-    width: 90%;
-    max-width: 1100px;
+.profile-section{    
     background-color: #fff;
     color: #efeded;
     border: 1px solid #ddd;
@@ -196,6 +201,9 @@ body {
     body{
         display: inline;
     }
+    .side-slider{
+        width: 250px;
+    }
 }
 .profileinfo{
     margin-top: 30px;    
@@ -203,7 +211,6 @@ body {
 .profileimg p{
     font-size: 25px;
 }
-
 .profileimg h4{
     font-size: 22px;
     font-weight: 550;
@@ -233,8 +240,7 @@ body {
     display: block;
 }
 .control-panel{
-    width: 90%;
-    max-width: 1100px;
+    
     display: flex;
     justify-content: space-evenly;
     margin: auto;
@@ -264,8 +270,6 @@ body {
 /* styling for player personal-information section */
 
 .personal-information{
-    width: 90%;
-    max-width: 1100px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -281,8 +285,7 @@ body {
 .personal-information div{
     margin-right: 20px;
     margin-bottom: 10px;
-    width: 40%;
-    
+    width: 40%;  
 }
 .personal-information h3{
     font-size: 20px;
@@ -318,8 +321,8 @@ body {
 .about-paragraph{
     font-size: 30px;
     color: #333;
-    padding: 15px 8%;
-    margin: 10px 20px 5px 20px;
+    padding: 15px;
+    margin: 10px ;
     font-family: sans-serif;
 }
 @media screen and (max-width: 600px){
