@@ -5,70 +5,91 @@ Sideslider.classList.toggle('active');
 }
 
 // script for record slider 
-const slider = document.querySelector(".slider");
-const slideimage = document.querySelectorAll(".img");
+// ...existing code...
 
-let slidecounter = 1;
-let length = slideimage.length;
+function initSlider(sliderContainerId) {
+    const sliderContainer = document.getElementById(sliderContainerId);
+    if (!sliderContainer) return;
 
-// to creating a button div 
-const control = document.querySelector('.control');
-for(let i = 0; i < length; i++){
-    const div = document.createElement("div");
-    div.className = "button";
-    control.appendChild(div);
-}
+    const slider = sliderContainer.querySelector('.slider');
+    const images = sliderContainer.querySelectorAll('.img');
+    const control = sliderContainer.querySelector('.control');
+    let slidecounter = 1;
+    let length = images.length;
+    let slideInterval;
+    let buttons = [];
 
-// reset the background color of div buttons
-const buttons = document.querySelectorAll(".button");
-function resetbg(){
-    buttons.forEach((button) =>{
-        button.style.background = "transparent" ; 
-        button.addEventListener("mouseover", stopslideshow);
-        button.addEventListener("mouseout", startslideshow); 
+    // Clear previous controls if any
+    control.innerHTML = '';
+
+    // Create control buttons
+    for (let i = 0; i < length; i++) {
+        const div = document.createElement("div");
+        div.className = "button";
+        control.appendChild(div);
+    }
+    buttons = control.querySelectorAll('.button');
+
+    function resetbg() {
+        buttons.forEach((button) => {
+            button.style.background = "transparent";
+            button.removeEventListener("mouseover", stopslideshow);
+            button.removeEventListener("mouseout", startslideshow);
+            button.addEventListener("mouseover", stopslideshow);
+            button.addEventListener("mouseout", startslideshow);
+        });
+    }
+
+    buttons.forEach((button, i) => {
+        button.addEventListener("click", () => {
+            resetbg();
+            slider.style.transform = `translateX(-${i * 100}%)`;
+            slidecounter = i + 1;
+            buttons[i].style.background = 'black';
+        });
     });
-}
 
-buttons.forEach((button, i) => {
-    button.addEventListener("click", ()=>{
+    function changecolor() {
         resetbg();
-        slider.style.transform = `translateX(-${i * 100}%)`;
-        slidecounter = i + 1;
-        buttons[i].style.background = 'black';
-    });
-});
-// changing colors while changing slides
-const changecolor = () =>{
-    resetbg()
-    buttons[slidecounter-1].style.background = "black";
-}
-// function for nextslide
-function nextslide(){
-    slider.style.transform = `translateX(-${slidecounter * 100}%)`;
-    slidecounter++;
-}
-// for firstslide
-function firstslide(){
-    slider.style.transform = `translateX(0px)`;
-    slidecounter = 1;
-}
-// function for automation
-let slideInterval;
+        buttons[slidecounter - 1].style.background = "black";
+    }
 
-const startslideshow= ()=>{
-    slideInterval = setInterval(() =>{
-        slidecounter < length ? nextslide() : firstslide();
-        changecolor();
-    }, 2000);
-};
-startslideshow();
+    function nextslide() {
+        slider.style.transform = `translateX(-${slidecounter * 100}%)`;
+        slidecounter++;
+    }
 
-const stopslideshow = () =>{
-    clearInterval(slideInterval);
+    function firstslide() {
+        slider.style.transform = `translateX(0px)`;
+        slidecounter = 1;
+    }
+
+    function startslideshow() {
+        slideInterval = setInterval(() => {
+            slidecounter < length ? nextslide() : firstslide();
+            changecolor();
+        }, 2000);
+    }
+
+    function stopslideshow() {
+        clearInterval(slideInterval);
+    }
+
+    slider.addEventListener("mouseover", stopslideshow);
+    slider.addEventListener("mouseout", startslideshow);
+
+    // Start slideshow for this slider
+    startslideshow();
+    changecolor();
 }
-slider.addEventListener("mouseover", stopslideshow);
-slider.addEventListener("mouseout", startslideshow);
-// script of slider end
+
+// Initialize sliders for each player
+initSlider('bhuvi-slider');
+initSlider('ajinkya-slider');
+initSlider('klrahul-slider');
+initSlider('virat-slider');
+initSlider('msdhoni-slider');
+initSlider('rohit-slider');
 
 //  Player Image Box Toggle
 const playerimgBox = document.querySelectorAll('.players-imgbox');
@@ -100,7 +121,7 @@ function Showinformation(id){
     playerInfoSections.forEach(section =>{
         section.classList.remove('active');
     });
-    document.getElementById(id).classList.add('active');
+    document.getElementById(id).classList.add('active');   
 }
 
 // Function to show/hide player information
