@@ -267,6 +267,46 @@ body {
     color: #fff;
     font-weight: 600;
 }
+
+/* styling for record slider*/
+.slider-feild{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.slidebox{ 
+    height: 500px;
+    margin: auto;
+    margin: 48px 0 24px 0; 
+    overflow: hidden;
+}
+.slider{
+    width: 100%;
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.control{
+    display: flex;
+    justify-content: center;
+}
+.button{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    margin: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+@media screen and (max-width: 600px){
+    .slidebox{
+        height: auto;
+    }
+}
 /* styling for player personal-information section */
 
 .personal-information{
