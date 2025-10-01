@@ -118,7 +118,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
-    margin: 20px;
+    margin: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
@@ -174,7 +174,7 @@ body {
 /* styling for personal player biodata card */
 .profile-section{    
     background-color: #fff;
-    color: #efeded;
+    color: #423f3f;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -210,6 +210,7 @@ body {
 }
 .profileimg p{
     font-size: 25px;
+    color: #423f3f;
 }
 .profileimg h4{
     font-size: 22px;
@@ -450,7 +451,7 @@ tr:hover{
     background-color: #f1ecec;
 }
 .career-stats{
-    margin: 10px;
+    margin: 10px 0;
     background-color: #fff;
     box-shadow:0 2px 5px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
@@ -475,7 +476,7 @@ tr:hover{
     justify-content: center;
     align-items: center;
     width: 800px;
-    margin: 20px;
+    margin: 20px 0;
     padding: 40px;
     background-color: #fff;
     border-radius: 5px;
@@ -509,7 +510,7 @@ tr:hover{
 .video-box{
     display: inline-block;
     width:800px;
-    margin: 20px;
+    margin: 20px 0;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
