@@ -475,7 +475,8 @@ tr:hover{
     display: inline-block;
     justify-content: center;
     align-items: center;
-    width: 800px;
+    width: 700px;
+    height: auto;
     margin: 20px 0;
     padding: 40px;
     background-color: #fff;
@@ -509,7 +510,8 @@ tr:hover{
 }
 .video-box{
     display: inline-block;
-    width:800px;
+    width:700px;
+    height: auto;
     margin: 20px 0;
     padding: 20px;
     background-color: #fff;
