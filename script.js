@@ -5,8 +5,6 @@ Sideslider.classList.toggle('active');
 }
 
 // script for record slider 
-// ...existing code...
-
 function initSlider(sliderContainerId) {
     const sliderContainer = document.getElementById(sliderContainerId);
     if (!sliderContainer) return;

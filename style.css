@@ -59,14 +59,14 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
-.slider ul li a{
+.side-slider ul li a{
     text-decoration: none;
     color: #fff;
     padding: 14px 20px;
     display: block;
     font-size: 22px;
 }
-.slider ul li a:hover {
+.side-slider ul li a:hover {
     background-color: #575757;
 }
 .closebtn {
