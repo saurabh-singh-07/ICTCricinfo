@@ -274,7 +274,6 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
-    height: auto;
     margin: auto;
     margin: 48px 0 24px 0; 
     overflow: hidden;    
@@ -284,6 +283,7 @@ body {
 }
 .slider{
     width: 100%;
+    height: auto;
     display: flex;
     transition: transform 0.7s ease-in-out;
 }
@@ -305,11 +305,7 @@ img{
     border-radius: 50%;
     cursor: pointer;
 }
-@media screen and (max-width: 600px){
-    .slidebox{
-        height: auto;
-    }
-}
+
 /* styling for player personal-information section */
 .personal-information{
     display: flex;
